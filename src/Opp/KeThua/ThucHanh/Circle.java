@@ -1,6 +1,8 @@
 package Opp.KeThua.ThucHanh;
 
-public class Circle extends Shape {
+import Opp.Abstract.BaiTap.interfaceResizeable.Resizeable;
+
+public class Circle extends Shape implements Resizeable {
     private double radius = 1.0;
 
     public Circle(double radius) {
@@ -31,12 +33,25 @@ public class Circle extends Shape {
     public double getPerimeter() {
         return 2 * radius * Math.PI;
     }
+    @Override
+    public String name() {
+        return "hinh tron";
+
+    }
 
     @Override
     public String toString() {
-        return "A Circle with radius="
-                + getRadius()
-                + ",Which is a subclass of"
-                + super.toString();
+//        return "A Circle with radius="
+//                + getRadius()
+//                + ",Which is a subclass of"
+//                + super.toString();
+        return "hinh tron la:";
+    }
+
+
+
+    @Override
+    public double resize(double percent) {
+        return getArea()+getArea() * percent / 100;
     }
 }

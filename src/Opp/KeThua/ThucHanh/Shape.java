@@ -1,6 +1,8 @@
 package Opp.KeThua.ThucHanh;
 
 
+import Opp.Abstract.BaiTap.interfaceResizeable.Resizeable;
+
 public class Shape {
     private String color = "green";
     private boolean filled = true;
@@ -11,6 +13,9 @@ public class Shape {
     public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
+    }
+    public String name(){
+        return "shape";
     }
 
     public String getColor() {
