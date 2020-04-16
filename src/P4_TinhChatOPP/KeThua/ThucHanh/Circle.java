@@ -51,7 +51,8 @@ public class Circle extends Shape implements Resizeable {
 
 
     @Override
-    public double resize(double percent) {
-        return getArea()+getArea() * percent / 100;
+    public void resize(double percent) {
+        System.out.println("Dien tich Hinh tron truoc khi resize: "+ Math.round(getArea()*100)/100d);
+        System.out.println("Dien tich Hinh tron sau khi resize: "+ Math.round((getArea()+getArea() * percent / 100)*100)/100d);
     }
 }

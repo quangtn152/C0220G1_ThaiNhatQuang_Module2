@@ -1,7 +1,9 @@
 package P4_TinhChatOPP.KeThua.ThucHanh;
 
 
-public class Shape {
+import P4_TinhChatOPP.Abstract.BaiTap.interfaceResizeable.Resizeable;
+
+public class Shape implements Resizeable {
     private String color = "green";
     private boolean filled = true;
 
@@ -38,6 +40,11 @@ public class Shape {
                 + getColor()
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
+    }
+
+    @Override
+    public void resize(double percent) {
+
     }
 }
 
