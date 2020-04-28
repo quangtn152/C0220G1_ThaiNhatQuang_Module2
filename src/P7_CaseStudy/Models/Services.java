@@ -16,6 +16,10 @@ public abstract class Services  {
         this.maxPeople = maxPeople;
     }
 
+    public Services() {
+
+    }
+
     public String getServicesNames() {
         return servicesNames;
     }

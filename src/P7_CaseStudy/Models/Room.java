@@ -7,6 +7,9 @@ public class Room extends Services {
         super(servicesNames, id, usedArea, rentCost, maxPeople);
         this.freeService = freeService;
     }
+    public Room(){
+
+    }
 
     public String getFreeService() {
         return freeService;

@@ -18,6 +18,9 @@ public class House extends Services {
         this.tienNghi = tienNghi;
         this.soTang = soTang;
     }
+    public House(){
+
+    }
 
     public String getTieuChuanPhong() {
         return tieuChuanPhong;

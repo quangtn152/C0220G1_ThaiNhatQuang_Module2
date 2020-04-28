@@ -1,12 +1,13 @@
 package P7_CaseStudy.Models;
 
-import P7_CaseStudy.Task1.OtherServices;
-
-public class Villa extends Services implements OtherServices {
+public class Villa extends Services {
     private String tieuChuanPhong;
     private String tienNghi;
     private int poolArea;
     private int soTang;
+
+    public Villa() {
+    }
 
     public Villa(String servicesNames,
                  String id,
@@ -21,10 +22,11 @@ public class Villa extends Services implements OtherServices {
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;
         this.poolArea = poolArea;
-        this.tienNghi=tienNghi;
+        this.tienNghi = tienNghi;
     }
 
     public String getTieuChuanPhong() {
+
         return tieuChuanPhong;
     }
 
@@ -61,17 +63,12 @@ public class Villa extends Services implements OtherServices {
         System.out.println("Services Names: " + getServicesNames() +
                 "\nID Phong: " + getId() +
                 "\nTieu Chuan Phong: " + this.tieuChuanPhong +
-                "\nDien Tich Su Dung: " + getUsedArea() + " m2"+
+                "\nDien Tich Su Dung: " + getUsedArea() + " m2" +
                 "\nTien Nghi : " + this.tienNghi +
-                "\nDien Tich Ho Boi: " + this.poolArea + " m2"+
-                "\nGia Phong: " + getRentCost() + " $"+
+                "\nDien Tich Ho Boi: " + this.poolArea + " m2" +
+                "\nGia Phong: " + getRentCost() + " $" +
                 "\nSo Nguoi Toi Da: " + getMaxPeople() +
                 "\nSo Tang: " + this.soTang);
     }
 
-    @Override
-    public void OtherServices(String nameOtherServices, String donVi, int prices) {
-        System.out.println("Ten dich vu di kem: "+ nameOtherServices +
-                            "\nGia: "+ prices + " "+donVi);
-    }
 }

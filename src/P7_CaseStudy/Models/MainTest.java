@@ -1,6 +1,6 @@
 package P7_CaseStudy.Models;
 
-public class Test {
+public class MainTest {
     public static void main(String[] args) {
         Services villa = new Villa("Villa",
                 "villa1",
