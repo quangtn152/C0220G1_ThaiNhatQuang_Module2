@@ -81,7 +81,8 @@ public class FuncFileCustomerCSV { private static final String COMMA_DELIMITER =
                 customer.setIdCard(spliData[3]);
                 customer.setPhone(spliData[4]);
                 customer.setEmail(spliData[5]);
-                customer.setAddress((spliData[6]));
+                customer.setCustomerType(spliData[6]);
+                customer.setAddress((spliData[7]));
                 listCustomer.add(customer);
             }
         } catch (Exception e) {

@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/CaseStudy/Libs/opencsv-4.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/CaseStudy/Libs/commons-lang3-3.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/CaseStudy/Libs/commons-collections4-4.1.jar!/" />
+      <root url="file://$PROJECT_DIR$/src/CaseStudy/Libs" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="https://mvnrepository.com/artifact/com.opencsv/opencsv" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/opencsv-4.6-sources.jar!/" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/src/CaseStudy/Libs" recursive="false" />
+  </library>
+</component>

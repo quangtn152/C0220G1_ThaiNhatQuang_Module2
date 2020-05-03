@@ -1,21 +1,15 @@
 package P7_CaseStudy.Controllers;
 
-import P7_CaseStudy.Commons.FuncFileHouseCSV;
-import P7_CaseStudy.Commons.FuncFileRoomCSV;
-import P7_CaseStudy.Commons.FuncFileVillaCSV;
-import P7_CaseStudy.Models.Room;
-import P7_CaseStudy.Models.Villa;
-import P7_CaseStudy.Models.House;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import static P7_CaseStudy.Controllers.BookingControllers.addNewBooking;
 import static P7_CaseStudy.Controllers.BookingControllers.bookingMovieTicket4D;
-import static P7_CaseStudy.Controllers.ServiceController.addNewServices;
-import static P7_CaseStudy.Controllers.ServiceController.showServices;
 import static P7_CaseStudy.Controllers.CustomerController.addNewCustomer;
 import static P7_CaseStudy.Controllers.CustomerController.showInformationCustomer;
+import static P7_CaseStudy.Controllers.EmployeeController.findEmployee;
+import static P7_CaseStudy.Controllers.EmployeeController.showInformationEmployee;
+import static P7_CaseStudy.Controllers.ServiceController.addNewServices;
+import static P7_CaseStudy.Controllers.ServiceController.showServices;
 
 public class MainController {
 
@@ -75,10 +69,6 @@ public class MainController {
         }
     }
 
-    private static void showInformationEmployee() {
-    }
 
-    private static void findEmployee() {
-    }
 
 }

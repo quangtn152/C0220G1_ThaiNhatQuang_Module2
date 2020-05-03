@@ -97,21 +97,21 @@ public class CustomerController {
     }
 
     private static void addBirthday() {
-        String temp = scn.next();
-        while (!FunctionValidation.checkCustomerBirthday(temp)) {
+        String tempBirthday = scn.nextLine();
+        while (!FunctionValidation.checkCustomerBirthday(tempBirthday)) {
             System.out.println("Birthday is invalid! Enter Birthday again:");
-            temp = scn.next();
+            tempBirthday = scn.nextLine();
         }
-        customer.setBirthDay(temp);
+        customer.setBirthDay(tempBirthday);
     }
 
     private static void addFullName() {
-        String temp = scn.next();
-        while (!FunctionValidation.checkCustomerName(temp)) {
+        String tempFullName = scn.nextLine();
+        while (!FunctionValidation.checkCustomerName(tempFullName)) {
             System.out.println("FullName is invalid! Enter FullName again:");
-            temp = scn.next();
+            tempFullName = scn.nextLine();
         }
-        customer.setFullName(temp);
+        customer.setFullName(tempFullName);
     }
 
     public static void showInformationCustomer() {

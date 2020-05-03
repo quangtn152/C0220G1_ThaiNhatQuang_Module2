@@ -1,9 +1,6 @@
 package P7_CaseStudy.Commons;
 
-import P7_CaseStudy.Models.Customer;
-import P7_CaseStudy.Models.House;
-import P7_CaseStudy.Models.Room;
-import P7_CaseStudy.Models.Villa;
+import P7_CaseStudy.Models.*;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,6 +19,7 @@ public class FuncGeneric {
         EMPLOYEE,
     }
 
+
     public static <E> void displayList(ArrayList<E> list) {
         int i = 1;
         System.out.println("----------- List ----------");
@@ -39,7 +37,7 @@ public class FuncGeneric {
                 ((Customer) item).showInfo();
             }
 //            else if(item instanceof Employee){
-//                System.out.println();
+//                System.out.println("qq");
 //            }
 
             i++;
