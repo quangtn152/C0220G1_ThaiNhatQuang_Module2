@@ -16,13 +16,14 @@ public class Blog {
     private String content;
     private Date dateCreate;
     @ManyToOne
-    @JoinColumn(name = "category_id")
-    Category category;
+    @JoinColumn(name="category_id", nullable=false)
+    private Category category;
 
     public Blog(Long id, Date dateCreate, Category category) {
         this.id = id;
         this.dateCreate = dateCreate;
         this.category = category;
+
     }
 
     public Date getDateCreate() {

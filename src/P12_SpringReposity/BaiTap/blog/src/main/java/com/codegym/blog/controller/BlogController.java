@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.data.domain.Page;
 
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,13 +31,15 @@ public class BlogController {
     @Autowired
     CategoryService categoryService;
 
-    @ModelAttribute("categorys")
+    @ModelAttribute("categories")
     public Iterable<Category> categories() {
         return categoryService.findAll();
     }
 
     @PostMapping("/create-blog")
     public ModelAndView saveCreateForm(@ModelAttribute("blog") Blog blog) {
+        Date date = new Date();
+        blog.setDateCreate(date);
         blogService.save(blog);
         ModelAndView modelAndView = new ModelAndView("/blog/create");
         modelAndView.addObject("blog", new Blog());
@@ -45,7 +48,7 @@ public class BlogController {
     }
 
     @GetMapping("/blogs")
-    public ModelAndView listBlogs(@PageableDefault(size = 2) Pageable pageable, @RequestParam("s") Optional<String> s) {
+    public ModelAndView listBlogs(@PageableDefault(size = 3) Pageable pageable, @RequestParam("s") Optional<String> s) {
         Page<Blog> blogs;
         if (s.isPresent()) {
             blogs = blogService.findByTitleContaining(s.get(), pageable);
@@ -53,9 +56,16 @@ public class BlogController {
             blogs = blogService.findAll(pageable);
         }
         ModelAndView modelAndView = new ModelAndView("/blog/list");
-        modelAndView.addObject("blogs", blogs);
+        modelAndView.addObject("blogs",blogService.findAllByTitleContainingOrderByDateCreateDesc("",pageable));
         return modelAndView;
     }
+//    @GetMapping("/tienhiep")
+//    public ModelAndView tienHiep(@PageableDefault(size = 5) Pageable pageable) {
+//        ModelAndView modelAndView = new ModelAndView("/user/show");
+//        modelAndView.addObject("post", postService.findAllByCategory_IdOrderByDateCreateDesc(1L, pageable));
+//        modelAndView.addObject("type", "1");
+//        return modelAndView;
+//    }
 
     @GetMapping("/edit-blog/{id}")
     public ModelAndView showEditForm(@PathVariable Long id) {

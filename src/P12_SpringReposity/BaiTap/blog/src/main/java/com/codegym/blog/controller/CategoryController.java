@@ -18,8 +18,8 @@ import java.util.Optional;
 public class CategoryController {
     @Autowired
     CategoryService categoryService;
-//    @Autowired
-//    BlogService blogService;
+    @Autowired
+    BlogService blogService;
 
     @GetMapping("/create-category")
     public ModelAndView showCreateCategory() {
@@ -39,7 +39,7 @@ public class CategoryController {
     }
 
     @GetMapping("/categories")
-    public ModelAndView listCategorys(@PageableDefault(size = 2) Pageable pageable, @RequestParam("s") Optional<String> s) {
+    public ModelAndView listCategory(@PageableDefault(size = 2) Pageable pageable, @RequestParam("s") Optional<String> s) {
         Page<Category> categories;
         if (s.isPresent()) {
             categories = categoryService.findNameContaining(s.get(), pageable);

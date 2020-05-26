@@ -1,6 +1,7 @@
 package com.codegym.blog.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "categorys")
@@ -13,28 +14,16 @@ public class Category {
 
     public Category() {
     }
-    @ManyToOne
-    @JoinColumn(name = "blog_id")
-    Blog blog;
+    @OneToMany(mappedBy="category")
+    private Set<Blog> blogs;
 
-    public Category(Blog blog) {
-        this.blog = blog;
+    public Set<Blog> getBlogs() {
+        return blogs;
     }
 
-    public Category(Long id, String name, Blog blog) {
-        this.id = id;
-        this.name = name;
-        this.blog = blog;
+    public void setBlogs(Set<Blog> blogs) {
+        this.blogs = blogs;
     }
-
-    public Blog getBlog() {
-        return blog;
-    }
-
-    public void setBlog(Blog blog) {
-        this.blog = blog;
-    }
-
 
     public Long getId() {
         return id;

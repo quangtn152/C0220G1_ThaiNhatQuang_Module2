@@ -20,4 +20,6 @@ public interface BlogService {
 
     Page<Blog> findByTitleContaining(String title, Pageable pageable);
 
+    Page<Blog> findAllByTitleContainingOrderByDateCreateDesc(String title,Pageable pageable);
+
 }
