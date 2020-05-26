@@ -59,13 +59,7 @@ public class BlogController {
         modelAndView.addObject("blogs",blogService.findAllByTitleContainingOrderByDateCreateDesc("",pageable));
         return modelAndView;
     }
-//    @GetMapping("/tienhiep")
-//    public ModelAndView tienHiep(@PageableDefault(size = 5) Pageable pageable) {
-//        ModelAndView modelAndView = new ModelAndView("/user/show");
-//        modelAndView.addObject("post", postService.findAllByCategory_IdOrderByDateCreateDesc(1L, pageable));
-//        modelAndView.addObject("type", "1");
-//        return modelAndView;
-//    }
+
 
     @GetMapping("/edit-blog/{id}")
     public ModelAndView showEditForm(@PathVariable Long id) {
@@ -82,6 +76,8 @@ public class BlogController {
 
     @PostMapping("/edit-blog")
     public ModelAndView updateBlog(@ModelAttribute("blog") Blog blog) {
+        Date date = new Date();
+        blog.setDateCreate(date);
         blogService.save(blog);
         ModelAndView modelAndView = new ModelAndView("/blog/edit");
         modelAndView.addObject("blog", blog);

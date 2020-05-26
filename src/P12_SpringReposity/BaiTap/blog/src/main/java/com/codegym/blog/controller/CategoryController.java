@@ -39,13 +39,11 @@ public class CategoryController {
     }
 
     @GetMapping("/categories")
-    public ModelAndView listCategory(@PageableDefault(size = 2) Pageable pageable, @RequestParam("s") Optional<String> s) {
+    public ModelAndView listCategory(Pageable pageable) {
         Page<Category> categories;
-        if (s.isPresent()) {
-            categories = categoryService.findNameContaining(s.get(), pageable);
-        } else {
-            categories = categoryService.findAll(pageable);
-        }
+
+        categories = categoryService.findAll(pageable);
+
         ModelAndView modelAndView = new ModelAndView("/category/list");
         modelAndView.addObject("categories", categories);
         return modelAndView;
@@ -63,6 +61,7 @@ public class CategoryController {
             return modelAndView;
         }
     }
+
     @PostMapping("/edit-category")
     public ModelAndView updateCategory(@ModelAttribute("category") Category category) {
         categoryService.save(category);
@@ -71,6 +70,7 @@ public class CategoryController {
         modelAndView.addObject("message", "Category updated successfully");
         return modelAndView;
     }
+
     @GetMapping("/delete-category/{id}")
     public ModelAndView showDeleteCategory(@PathVariable Long id) {
         Category category = categoryService.findById(id);

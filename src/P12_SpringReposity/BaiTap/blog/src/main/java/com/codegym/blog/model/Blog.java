@@ -19,11 +19,12 @@ public class Blog {
     @JoinColumn(name="category_id", nullable=false)
     private Category category;
 
-    public Blog(Long id, Date dateCreate, Category category) {
+    public Blog(Long id, String title, String content, Date dateCreate, Category category) {
         this.id = id;
+        this.title = title;
+        this.content = content;
         this.dateCreate = dateCreate;
         this.category = category;
-
     }
 
     public Date getDateCreate() {
@@ -43,11 +44,6 @@ public class Blog {
     }
 
     public Blog() {
-    }
-
-    public Blog(String title, String content) {
-        this.title = title;
-        this.content = content;
     }
 
     public Long getId() {
